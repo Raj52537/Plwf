@@ -59,6 +59,7 @@ jobs:
          API_HASH : ${{ secrets.API_HASH }}
          TG_BOT_TOKEN : ${{ secrets.TG_TOKEN }} 
          AUTH_CHANNEL : ${{ secrets.CHAT_ID }} 
+         SUDO_USERS : ${{ secrets.SUDO_USERS }}
       - name: Workflow Looping
         run: |
           git clone https://github.com/${GITHUB_REPOSITORY} loop
