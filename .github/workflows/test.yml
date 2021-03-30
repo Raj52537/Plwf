@@ -9,7 +9,7 @@ on:
 env:
   GitHubMail: "Raj9039852537@@gmail.com"
   GitHubName: "Raj9039852537"
-  BOT_PASSWORD = ${{ secrets.PASSWORD }}
+  BOT_PASSWORD: "${{ secrets.PASSWORD }}"
 
 jobs:
   ubuntu:
