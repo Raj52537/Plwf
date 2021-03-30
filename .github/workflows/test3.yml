@@ -35,7 +35,7 @@ jobs:
           except:
             class ExecVars:
             # Set true if its VPS
-            IS_VPS = False
+            IS_VPS = True
             API_HASH = ${{ secrets.API_HASH }}
             API_ID = ${{ secrets.API_ID }}
             BOT_TOKEN = ${{ secrets.TG_TOKEN }}
