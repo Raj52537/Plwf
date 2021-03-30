@@ -40,7 +40,7 @@ jobs:
         #  git clone https://github.com/Raj90398/PublicLeech --depth 1 PublicLeech 
       - name: Clone The Secret Mirror Repository
         run: |
-          git clone https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.SOURCE }} source
+          git clone https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.SOURCE }} PublicLeech
               # docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfile -t botkaca
       - name: Compile The Mirroring Docker Container
         run: |
