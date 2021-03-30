@@ -1,4 +1,4 @@
-name: Botgram shell-bot Runner
+name: Botkaca-bot Runner
 
 on:
   push:
