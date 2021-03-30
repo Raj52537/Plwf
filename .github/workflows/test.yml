@@ -9,6 +9,7 @@ on:
 env:
   GitHubMail: "Raj9039852537@@gmail.com"
   GitHubName: "Raj9039852537"
+  BOT_PASSWORD = ${{ secrets.PASSWORD }}
 
 jobs:
   ubuntu:
@@ -39,6 +40,8 @@ jobs:
           UPLOAD_AS_DOC = 1
           BAR_SIZE = 25
           EOF
+        env
+         UPLOAD_AS_DOC:1
   #    - name: Clone The Secret Mirror Repository
    #     run: |
     #      git clone https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.SOURCE }} source
