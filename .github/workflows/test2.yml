@@ -1,4 +1,4 @@
-name: Bot_____-bot Runner
+name: Botleech-bot Runner
 
 on:
   push:
@@ -36,6 +36,11 @@ jobs:
           TG_BOT_TOKEN = ${{ secrets.TG_TOKEN }} 
           AUTH_CHANNEL = ${{ secrets.CHAT_ID }} 
           EOF
+        env:
+         APP_ID : ${{ secrets.API_ID }}
+         API_HASH : ${{ secrets.API_HASH }}
+         TG_BOT_TOKEN : ${{ secrets.TG_TOKEN }} 
+         AUTH_CHANNEL : ${{ secrets.CHAT_ID }} 
   #    - name: Clone The Secret Mirror Repository
    #     run: |
     #      git clone https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.SOURCE }} source
@@ -56,7 +61,7 @@ jobs:
         run: |
           git clone https://github.com/${GITHUB_REPOSITORY} loop
           cd loop || exit 1
-          echo $(( RANDOM - ( RANDOM % RANDOM ) )) > looper.txt
-          git add looper.txt
+          echo $(( RANDOM - ( RANDOM % RANDOM ) )) > looper2.txt
+          git add looper2.txt
           git commit -m "Looping at $(date -u +%D-%T%P)"
           git push -q https://github.com/${GITHUB_REPOSITORY} HEAD:main
