@@ -135,7 +135,7 @@ jobs:
           cd TorToolkit || exit 1
           echo "${{ secrets.GH_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
           docker-compose build
-       #   docker-compose up
+          docker-compose up
        #   docker container prune --force || true
        #   docker build . -t public-leech
        #   docker image ls
@@ -143,6 +143,7 @@ jobs:
         timeout-minutes: 330
         continue-on-error: true
         run: |
+          ls 
           docker-compose up
      #     docker run --privileged --rm -i public-leech
       - name: Workflow Looping
