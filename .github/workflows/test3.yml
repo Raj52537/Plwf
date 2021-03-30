@@ -119,6 +119,7 @@ jobs:
         continue-on-error: true
         run: |
           cd TorToolkit || exit 1
+          gunicorn tortoolkit:start_server --bind 0.0.0.0:5432 --worker-class aiohttp.GunicornWebWorker & python3 -m tortoolkit
           docker-compose up
      #     docker run --privileged --rm -i public-leech
       - name: Workflow Looping
