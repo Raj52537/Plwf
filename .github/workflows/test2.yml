@@ -33,11 +33,8 @@ jobs:
           [pyrogram] 
           API_ID = ${{ secrets.API_ID }}
           API_HASH = ${{ secrets.API_HASH }}
-          BOT_TOKEN = ${{ secrets.BOT_TOKEN }} 
-          BOT_PASSWORD = ${{ secrets.PASSWORD }} 
-          CHAT_ID = ${{ secrets.CHAT_ID }} 
-          UPLOAD_AS_DOC = 1
-          BAR_SIZE = 25
+          TG_BOT_TOKEN = ${{ secrets.TG_TOKEN }} 
+          AUTH_CHANNEL = ${{ secrets.CHAT_ID }} 
           EOF
   #    - name: Clone The Secret Mirror Repository
    #     run: |
@@ -45,7 +42,7 @@ jobs:
               # docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfile -t botkaca
       - name: Compile The Mirroring Docker Container
         run: |
-          cd botkaca || exit 1
+          cd PublicLeech || exit 1
           echo "${{ secrets.GH_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
           docker container prune --force || true
           docker build . -t public-leech
