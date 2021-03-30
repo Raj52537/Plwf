@@ -53,7 +53,7 @@ jobs:
           docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfile -t botkaca
           docker image ls
       - name: running Docker
-        timeout-minutes: 330
+        timeout-minutes: 331
         continue-on-error: true
         run: |
           docker run --privileged --rm -i botkaca
