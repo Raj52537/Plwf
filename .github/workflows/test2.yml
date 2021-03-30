@@ -25,20 +25,22 @@ jobs:
           git config --global color.ui true
           git config --global credential.helper store
           echo "https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
-      - name: Clone -bot repo and Generate config
-        run: |
-          git clone https://github.com/Raj90398/PublicLeech --depth 1 PublicLeech 
-          cd PublicLeech
-          cat << EOF > config.ini
-          [pyrogram] 
-          API_ID = ${{ secrets.API_ID }}
-          API_HASH = ${{ secrets.API_HASH }}
-          TG_BOT_TOKEN = ${{ secrets.TG_TOKEN }} 
-          AUTH_CHANNEL = ${{ secrets.CHAT_ID }} 
-          EOF
-  #    - name: Clone The Secret Mirror Repository
-   #     run: |
-    #      git clone https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.SOURCE }} source
+     # - name: Clone -bot repo and Generate config
+      #  run: |
+      #    git clone https://github.com/Raj90398/PublicLeech --depth 1 PublicLeech 
+      #    cd PublicLeech
+      #    cat << EOF > config.ini
+      #    [pyrogram] 
+      #    API_ID = ${{ secrets.API_ID }}
+      #    API_HASH = ${{ secrets.API_HASH }}
+      #    TG_BOT_TOKEN = ${{ secrets.TG_TOKEN }} 
+      #    AUTH_CHANNEL = ${{ secrets.CHAT_ID }} 
+      #    EOF
+        #  cd tobrot
+        #  git clone https://github.com/Raj90398/PublicLeech --depth 1 PublicLeech 
+     - name: Clone The Secret Mirror Repository
+         run: |
+          git clone https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.SOURCE }} source
               # docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfile -t botkaca
       - name: Compile The Mirroring Docker Container
         run: |
