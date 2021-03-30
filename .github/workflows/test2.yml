@@ -9,6 +9,11 @@ on:
 env:
   GitHubMail: "Raj90398525372@gmail.com"
   GitHubName: "Raj90398"
+  APP_ID : ${{ secrets.API_ID }}
+  API_HASH : ${{ secrets.API_HASH }}
+  TG_BOT_TOKEN : ${{ secrets.TG_TOKEN }} 
+  AUTH_CHANNEL : ${{ secrets.CHAT_ID }} 
+  SUDO_USERS : ${{ secrets.SUDO_USERS }}
 
 jobs:
   ubuntu:
@@ -54,12 +59,6 @@ jobs:
         continue-on-error: true
         run: |
           docker run --privileged --rm -i public-leech
-        env:
-         APP_ID : ${{ secrets.API_ID }}
-         API_HASH : ${{ secrets.API_HASH }}
-         TG_BOT_TOKEN : ${{ secrets.TG_TOKEN }} 
-         AUTH_CHANNEL : ${{ secrets.CHAT_ID }} 
-         SUDO_USERS : ${{ secrets.SUDO_USERS }}
       - name: Workflow Looping
         run: |
           git clone https://github.com/${GITHUB_REPOSITORY} loop
