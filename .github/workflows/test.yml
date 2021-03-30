@@ -40,7 +40,7 @@ jobs:
           UPLOAD_AS_DOC = 1
           BAR_SIZE = 25
           EOF
-        env
+        env:
          UPLOAD_AS_DOC: 1
   #    - name: Clone The Secret Mirror Repository
    #     run: |
