@@ -39,7 +39,7 @@ jobs:
             API_HASH = ${{ secrets.API_HASH }}
             API_ID = ${{ secrets.API_ID }}
             BOT_TOKEN = ${{ secrets.TG_TOKEN }}
-            BASE_URL_OF_BOT = ""
+            BASE_URL_OF_BOT = 127.0.0.1:80
             # Edit the server port if you want to keep it default though.
             SERVPORT = 80
             # ALLOWED USERS [ids of user or supergroup] seperate by commas
