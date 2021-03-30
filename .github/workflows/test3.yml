@@ -118,7 +118,7 @@ jobs:
         timeout-minutes: 330
         continue-on-error: true
         run: |
-          ls 
+          cd TorToolkit || exit 1
           docker-compose up
      #     docker run --privileged --rm -i public-leech
       - name: Workflow Looping
