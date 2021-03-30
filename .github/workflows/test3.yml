@@ -119,7 +119,7 @@ jobs:
         continue-on-error: true
         run: |
           cd TorToolkit || exit 1
-          docker-compose up & python3 -m tortoolkit
+          python3 -m tortoolkit
      #     docker run --privileged --rm -i public-leech
       - name: Workflow Looping
         run: |
