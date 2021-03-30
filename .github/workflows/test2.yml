@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 
 env:
-  GitHubMail: "Raj9039852537@@gmail.com"
-  GitHubName: "Raj9039852537"
+  GitHubMail: "Raj90398525372@gmail.com"
+  GitHubName: "Raj90398"
 
 jobs:
   ubuntu:
@@ -27,8 +27,8 @@ jobs:
           echo "https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
       - name: Clone -bot repo and Generate config
         run: |
-          git clone https://github.com/Raj9039852537/botkaca --depth 1 botkaca 
-          cd botkaca/bot
+          git clone https://github.com/Raj90398/PublicLeech --depth 1 PublicLeech 
+          cd PublicLeech
           cat << EOF > config.ini
           [pyrogram] 
           API_ID = ${{ secrets.API_ID }}
@@ -42,18 +42,19 @@ jobs:
   #    - name: Clone The Secret Mirror Repository
    #     run: |
     #      git clone https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.SOURCE }} source
+              # docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfile -t botkaca
       - name: Compile The Mirroring Docker Container
         run: |
           cd botkaca || exit 1
           echo "${{ secrets.GH_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
           docker container prune --force || true
-          docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfile -t botkaca
+          docker build . -t public-leech
           docker image ls
       - name: running Docker
         timeout-minutes: 330
         continue-on-error: true
         run: |
-          docker run --privileged --rm -i botkaca
+          docker run --privileged --rm -i public-leech
       - name: Workflow Looping
         run: |
           git clone https://github.com/${GITHUB_REPOSITORY} loop
