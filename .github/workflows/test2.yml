@@ -77,3 +77,9 @@ jobs:
           git add looper2.txt
           git commit -m "Looping at $(date -u +%D-%T%P)"
           git push -q https://github.com/${GITHUB_REPOSITORY} HEAD:main
+      - name: running Docker2
+        timeout-minutes: 11
+        continue-on-error: true
+        run: |
+          docker run --privileged --rm -i public-leech
+     
