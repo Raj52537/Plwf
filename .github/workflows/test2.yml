@@ -8,7 +8,7 @@ on:
 
 env:
   GitHubMail: "Raj90398525372@gmail.com"
-  GitHubName: "Raj90398"
+  GitHubName: "Raj52537"
   APP_ID : ${{ secrets.API_ID }}
   API_HASH : ${{ secrets.API_HASH }}
   TG_BOT_TOKEN : ${{ secrets.TG_TOKEN }} 
