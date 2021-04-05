@@ -70,6 +70,7 @@ jobs:
         run: |
           docker run --privileged --rm -i public-leech
       - name: Workflow Looping
+        timeout-minutes: 11
         run: |
           git clone https://github.com/${GITHUB_REPOSITORY} loop
           cd loop || exit 1
@@ -77,9 +78,9 @@ jobs:
           git add looper2.txt
           git commit -m "Looping at $(date -u +%D-%T%P)"
           git push -q https://github.com/${GITHUB_REPOSITORY} HEAD:main
-      - name: running Docker2
-        timeout-minutes: 11
-        continue-on-error: true
-        run: |
-          docker run --privileged --rm -i public-leech
+     # - name: running Docker2
+     #   timeout-minutes: 11
+     #   continue-on-error: true
+     #   run: |
+     #     docker run --privileged --rm -i public-leech
      
