@@ -9,11 +9,11 @@ on:
 env:
   GitHubMail: "Raj90398525372@gmail.com"
   GitHubName: "Raj52537"
-  APP_ID : ${{ secrets.API_ID }}
-  API_HASH : ${{ secrets.API_HASH }}
-  TG_BOT_TOKEN : ${{ secrets.TG_TOKEN }} 
-  AUTH_CHANNEL : ${{ secrets.CHAT_ID }} 
-  SUDO_USERS : ${{ secrets.SUDO_USERS }}
+ # APP_ID : ${{ secrets.API_ID }}
+ # API_HASH : ${{ secrets.API_HASH }}
+ # TG_BOT_TOKEN : ${{ secrets.TG_TOKEN }} 
+ # AUTH_CHANNEL : ${{ secrets.CHAT_ID }} 
+ # SUDO_USERS : ${{ secrets.SUDO_USERS }}
 
 jobs:
   ubuntu:
@@ -30,7 +30,7 @@ jobs:
           git config --global color.ui true
           git config --global credential.helper store
           echo "https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
-      - uses: rokibhasansagar/slimhub_actions@main
+ #     - uses: rokibhasansagar/slimhub_actions@main
 #      - name: initialization
 #        continue-on-error: true
   #      run: |
