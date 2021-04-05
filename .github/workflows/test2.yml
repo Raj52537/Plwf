@@ -65,12 +65,11 @@ jobs:
           docker build . -t public-leech
           docker image ls
       - name: running Docker
-        timeout-minutes: 5
+        timeout-minutes: 340
         continue-on-error: true
         run: |
           docker run --privileged --rm -i public-leech
       - name: Workflow Looping
-        timeout-minutes: 11
         run: |
           git clone https://github.com/${GITHUB_REPOSITORY} loop
           cd loop || exit 1
