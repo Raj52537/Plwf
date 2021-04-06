@@ -30,6 +30,7 @@ jobs:
           git config --global color.ui true
           git config --global credential.helper store
           echo "https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
+          df -hlT
  #     - uses: rokibhasansagar/slimhub_actions@main
       - name: initialization
         continue-on-error: true
@@ -56,6 +57,7 @@ jobs:
         #  git clone https://github.com/Raj90398/PublicLeech --depth 1 PublicLeech 
       - name: Clone The Secret Mirror Repository
         run: |
+          df -hlT
           git clone https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.SOURCE }} PublicLeech
               # docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfile -t botkaca
       - name: Compile The Mirroring Docker Container
